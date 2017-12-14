@@ -12,7 +12,7 @@ SHELL ["powershell", "-command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 
 ENV NODE_PATH c:\node
 
-  # apply new path environment variable including node, nanoserver has no powershell way to set the machine's or user's environmant
+  # apply new path environment variable including node, nanoserver has no powershell way to set the machine's or user's environment
 RUN $newPath = ('{0};{1}' -f $env:NODE_PATH, $env:PATH); `
   	Write-Host ('Updating PATH: {0}' -f $newPath); `
     setx /M PATH $newPath; `
